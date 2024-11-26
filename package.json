@@ -1,0 +1,60 @@
+{
+  "name": "admin-search-list",
+  "version": "1.0.0",
+  "description": "React component for Creating search list in admin project",
+  "keywords": [
+    "admin search list"
+  ],
+  "files": [
+    "dist-lib"
+  ],
+  "type": "module",
+  "main": "./dist-lib/index.js",
+  "module": "./dist-lib/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist-lib/index.js",
+      "require": "./dist-lib/index.js"
+    }
+  },
+  "types": "./dist-lib/index.d.ts",
+  "scripts": {
+    "start": "vite --mode localhost",
+    "build:lib": "vite build --mode lib",
+    "prepare": "husky",
+    "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx ./src",
+    "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx ./src",
+    "analysis": "vite-bundle-visualizer --mode lib"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": "eslint --cache --ext .js,.jsx,.ts,.tsx --max-warnings 0"
+  },
+  "dependencies": {
+    "classnames": "^2.5.1",
+    "react-sticky-box": "^2.0.5",
+    "react-use": "^17.5.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "@types/node": "^22.9.1",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@typescript-eslint/eslint-plugin": "^8.15.0",
+    "@typescript-eslint/parser": "^8.15.0",
+    "eslint": "8.57.0",
+    "eslint-plugin-import": "^2.31.0",
+    "husky": "^9.1.7",
+    "less": "^4.2.0",
+    "lint-staged": "^15.2.10",
+    "rollup-plugin-visualizer": "^5.12.0",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "vite-bundle-visualizer": "^1.2.1",
+    "vite-plugin-dts": "^4.3.0"
+  },
+  "peerDependencies": {
+    "antd": "^5.22.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}

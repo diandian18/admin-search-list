@@ -1,0 +1,96 @@
+// @blockMarginBottom: 24px;
+@btnGutter: 8px;
+@blockPadding: 24px;
+
+.searchList {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  &.listScroll {
+    height: 100%;
+  }
+  padding: @blockPadding 0;
+  background: inherit;
+}
+
+.searchList__top {
+  padding: 0 @blockPadding @blockPadding;
+  // margin-bottom: @blockMarginBottom;
+}
+
+.searchList__search {
+  z-index: 9;
+  background: inherit;
+  padding: 0 @blockPadding;
+  // margin-bottom: @blockMarginBottom;
+}
+
+.searchList__search-btns {
+  padding: 0 12px;
+}
+
+.searchList__search-btn {
+  display: inline-block;
+  margin-right: @btnGutter;
+  margin-bottom: 24px;
+}
+
+.searchList__action {
+  padding: 0 @blockPadding @blockPadding;
+  // margin-bottom: @blockMarginBottom;
+  button {
+    margin-right: @btnGutter;
+    // margin-bottom: 24px; // antd form item
+  }
+}
+
+.searchList__beforeList {
+  padding: 0 @blockPadding @blockPadding;
+  // margin-bottom: @blockMarginBottom;
+}
+
+.searchList__loading {
+  flex: 1;
+  margin: 0 @blockPadding;
+  margin-bottom: @blockPadding;
+  &.listScroll {
+    overflow: overlay;
+  }
+  .ant-spin-nested-loading {
+    flex: 1;
+  }
+  .ant-spin-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .ant-table-wrapper {
+    flex: 1;
+    // padding-bottom: @blockPadding;
+    // margin-bottom: @blockMarginBottom;
+  }
+}
+
+.searchList__pagination-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.searchList__pagination-afterListRender {
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+}
+
+.searchList__pagination {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 @blockPadding;
+  // margin-bottom: @blockMarginBottom;
+}
+
+// 滚动加载
+.searchList__scrollLoad-nomore {
+  text-align: center;
+  padding: 10px;
+}
