@@ -1,4 +1,4 @@
-# React search list
+# Admin search list
 
 React component for Creating search list in admin project.
 
