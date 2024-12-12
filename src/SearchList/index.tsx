@@ -197,9 +197,9 @@ const SearchList = <T extends Record<string, any>, D>(props: SearchListProps<T, 
       setPageSize: (num: number) => { setPageSize(num) },
       getPageTotal: () => pageTotal,
       setPageTotal: (total: number) => { setPageTotal(total) },
-      scrollToListTop,
-      scrollToList,
-      getListScrollTop,
+      scrollToListTop: () => scrollToListTop(scrollContainer ?? SEARCH_LIST_DOM_CLASS),
+      scrollToList: (top: number) => scrollToList(top, scrollContainer ?? SEARCH_LIST_DOM_CLASS),
+      getListScrollTop: () => getListScrollTop(scrollContainer ?? SEARCH_LIST_DOM_CLASS),
     };
   });
 

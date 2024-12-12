@@ -22,13 +22,13 @@ export function useBackTop<T extends Record<string, any>, D>(props: SearchListPr
   };
 }
 
-export function getListScrollTop() {
-  const scrollTop = document.querySelector(SEARCH_LIST_DOM_CLASS)!.scrollTop;
+export function getListScrollTop(wrap?: string) {
+  const scrollTop = document.querySelector(wrap ?? SEARCH_LIST_DOM_CLASS)!.scrollTop;
   return scrollTop;
 }
-export function scrollToList(top: number) {
-  document.querySelector(SEARCH_LIST_DOM_CLASS)?.scrollTo({ top });
+export function scrollToList(top: number, wrap?: string) {
+  document.querySelector(wrap ?? SEARCH_LIST_DOM_CLASS)?.scrollTo({ top });
 }
-export function scrollToListTop() {
-  scrollToList(0);
+export function scrollToListTop(wrap?: string) {
+  scrollToList(0, wrap);
 }
