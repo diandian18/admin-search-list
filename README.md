@@ -19,7 +19,7 @@ React component for Creating search list in admin project.
 - Allows for custom multilingual support.
 - Complete TypeScript type hints.
 
-View more in [documentation](https://doc.react-antd-console.site/development/search-list.html#%E7%BB%84%E4%BB%B6%E6%B3%9B%E5%9E%8B)
+[📒Documentation](https://doc.react-antd-console.site/development/search-list.html#%E7%BB%84%E4%BB%B6%E6%B3%9B%E5%9E%8B) | [🔗Live Preview](https://template.react-antd-console.site/table/tablePage)
 
 ## Install
 
