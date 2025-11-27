@@ -94,6 +94,13 @@ export interface SearchListProps<T extends Record<string, any>, D> {
   hidePagination?: boolean;
   /** antd PaginationProps分页组件props */
   paginationProps?: PaginationProps;
+  /** 请求分页参数key */
+  paginationKey?: {
+    /** 分页大小key */
+    pageSizeKey?: string;
+    /** 分页页码key */
+    pageNumKey?: string;
+  };
   /** 搜索、重置按钮配置 */
   searchBtn?: ('search' | 'reset')[];
   /** 搜索按钮 */

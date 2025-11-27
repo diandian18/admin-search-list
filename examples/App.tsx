@@ -1,6 +1,7 @@
+import { useRef } from 'react';
 import { Button, Form, Input, Table } from 'antd';
 import SearchListComponent from './SearchListComponent';
-import { GridAction, GridForm, GridFormItem } from '../dist-lib/index';
+import { GridAction, GridForm, GridFormItem, RefProps } from '../dist-lib/index';
 
 import '../dist-lib/style.css';
 
@@ -29,8 +30,10 @@ const columns = [
 
 const App = () => {
   const [form] = Form.useForm<SearchModel>();
+  const ref = useRef<RefProps<ListItem>>(null);
   return (
     <SearchListComponent<SearchModel, ListItem>
+      ref={ref}
       url="xxxx"
       searchRender={({ SearchBtnComponent }) => {
         return (

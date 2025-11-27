@@ -20,7 +20,7 @@
       "@/*": ["src/*"],
       "@@/*": ["examples/*"]
     },
-    "types": ["vite/client"],
+    "types": ["vite/client", "./typings.d.ts"],
     "resolveJsonModule": true,
     "declaration": true,
     "experimentalDecorators": true,

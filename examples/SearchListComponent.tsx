@@ -1,4 +1,5 @@
-import SearchList, { SearchListProps } from '../dist-lib/index';
+import { Ref, useRef, forwardRef, ReactElement } from 'react';
+import SearchList, { RefProps, SearchListProps } from '../dist-lib/index';
 
 const data = {
   code: 200,
@@ -23,14 +24,26 @@ async function httpGet<Res>(url: string, opts: {
   });
 }
 
+const SearchListComponentInner = <T extends Record<string, any>, D>(props: Omit<SearchListProps<T, D>, 'httpGet'>, ref: Ref<RefProps<D>>) => {
+  const tempRef = useRef<RefProps<D>>(null);
+  // @ts-expect-error pass
+  useImperativeHandle(ref, () => tempRef.current);
 
-const SearchListComponent = <T extends Record<string, any>, D>(props: Omit<SearchListProps<T, D>, 'httpGet'>) => {
   return (
     <SearchList
       {...props}
       httpGet={httpGet}
+      paginationKey={{
+        pageSizeKey: 'pageSize',
+        pageNumKey: 'pageNum',
+      }}
     />
   );
 };
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const SearchListComponent = forwardRef(SearchListComponentInner) as <T extends Record<string, any>, D>(
+  props: Omit<SearchListProps<T, D>, 'httpGet'> & { ref?: React.Ref<RefProps<D>> }
+) => ReactElement;
 
 export default SearchListComponent;

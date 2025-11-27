@@ -39,6 +39,7 @@ const SearchList = <T extends Record<string, any>, D>(props: SearchListProps<T, 
     searchLater = false,
     hidePagination = false,
     paginationProps,
+    paginationKey = {},
     searchBtn = ['search', 'reset'],
     searchBtnRender,
     resetBtnRender,
@@ -50,6 +51,11 @@ const SearchList = <T extends Record<string, any>, D>(props: SearchListProps<T, 
     language = Language['zh_Hans'],
     locale,
   } = props;
+
+  const {
+    pageSizeKey = 'perPage',
+    pageNumKey = 'page',
+  } = paginationKey;
 
   const { urlQuery, setUrlQuery } = useUrlQuery(props);
   const [pageNum, setPageNum] = useState(urlQuery?.pageNum ?? DEFAULT_PAGE_NUM); // 当前页数
@@ -77,8 +83,8 @@ const SearchList = <T extends Record<string, any>, D>(props: SearchListProps<T, 
     }
     const query = {
       ...searchModel,
-      page: searchParams?.pageNum ?? pageNum,
-      perPage: searchParams?.pageSize ?? pageSize,
+      [pageNumKey]: searchParams?.pageNum ?? pageNum,
+      [pageSizeKey]: searchParams?.pageSize ?? pageSize,
     };
     const get = httpGet;
     return get<Record<string, any>>(url, {
