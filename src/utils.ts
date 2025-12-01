@@ -18,8 +18,8 @@ export function pickDataByIdentifier<T>(obj: Record<string, any>, identifier: st
     if (!pre[next] && !notMatchedValue) {
       notMatchedValue = defaultValue;
     }
-    return pre[next] || {};
-  }, obj);
+    return pre[next];
+  }, obj) ?? defaultValue;
   if (notMatchedValue) {
     return notMatchedValue;
   }

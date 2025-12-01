@@ -1,12 +1,14 @@
-import { Ref, useRef, forwardRef, ReactElement } from 'react';
+import { Ref, useRef, forwardRef, ReactElement, useImperativeHandle } from 'react';
 import SearchList, { RefProps, SearchListProps } from '../dist-lib/index';
 
 const data = {
   code: 200,
   message: 'success',
   data: {
-    items: [{ name: 'aaa', age: 18 }, { name: 'bbb', age: 82 }],
-    total: 100,
+    // items: [{ name: 'aaa', age: 18 }, { name: 'bbb', age: 82 }],
+    // total: 100,
+    items: [],
+    total: 0,
   },
 };
 
